@@ -9,9 +9,13 @@
 
 
 # copy wwwizer configuration files
-cookbook_file "/etc/nginx/sites-available/wwwizer" do
-  source "wwwizer"
-  action :create
+# cookbook_file "/etc/nginx/sites-available/wwwizer" do
+#   source "wwwizer"
+#   action :create
+# end
+
+template "/etc/nginx/sites-available/wwwizer" do
+  source "wwwizer.erb"
 end
 
 link "/etc/nginx/sites-enabled/wwwizer" do
