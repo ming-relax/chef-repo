@@ -7,7 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-puts "=" * 80
+
 # copy wwwizer configuration files
 cookbook_file "/etc/nginx/sites-available/wwwizer" do
   source "wwwizer"
