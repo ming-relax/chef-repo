@@ -20,16 +20,6 @@
 #
 
 include_recipe "nginx::#{node['nginx']['install_method']}"
-puts "=" * 80
-# copy wwwizer configuration files
-cookbook_file "/etc/nginx/sites-available/wwwizer" do
-  source "wwwizer"
-  action :create
-end
-
-link "/etc/nginx/sites-enabled/wwwizer" do
-  to "/etc/nginx/sites-available/wwwizer"
-end
 
 service 'nginx' do
   supports :status => true, :restart => true, :reload => true
